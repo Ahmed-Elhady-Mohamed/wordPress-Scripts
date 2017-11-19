@@ -32,10 +32,11 @@ if __name__ == '__main__':
 	if len(sys.argv) != 3:
 		sys.exit("\n\n[usage]   " + sys.argv[0] + " <Target> <Usernames Wordlist file>\n[Example] "  + sys.argv[0] + "  http://domain.com users.txt\n\n")
 
-	# Command Line Arguments
+	# Get Command Line Arguments
 	target = sys.argv[1]
 	usernameFile = sys.argv[2]
 
+	# Set the URI and useragent
 	site = target + '/login/'
 	hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'}
     
