@@ -44,7 +44,7 @@ if __name__ == '__main__':
 	try:
 		file = open(usernameFile, 'r')
 	except IOError as e:
-		sys.exit("\n[-] Username File does not exist!")
+		sys.exit("\n[-] " + usernameFile + " File does not exist!")
 
 	
 	# Loop over the username list
