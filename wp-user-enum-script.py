@@ -38,7 +38,7 @@ if __name__ == '__main__':
 	usernameFile = sys.argv[3]
 	
 	# Set the URI and useragent
-	site = target + loginPage
+	site = target + '/' + loginPage
 	hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'}
     
 	# Open the usernames wordlist file in a read mode
