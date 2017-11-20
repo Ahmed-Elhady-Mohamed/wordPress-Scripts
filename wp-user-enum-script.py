@@ -55,7 +55,7 @@ if __name__ == '__main__':
 		if username[-1] == "\n": 
 			username = username[:-1]
 		
-		values = { 'username-679': username,'user_password-679': 'password', 'form_id':679, 'timestamp':'1511120675', 'request':'','redirect_to':target +'/user/?profiletab=main&um_action=edit', 'LTCx-C-YkJ-d-S':'JYZUPu62ATnbfH5UZoTgnFHINiRnQTuypsuyZ2xLn06yud6LPzmbWADbt6T7NqgPJvmJgyjA8m6_to5mJ2gTz-T28VEe7AUKK7iex5-sGH6r2s8MldoYTY2Vx0VQZUdM','rememberme':1, 'ZQS-dSU-hb-gYy-E-Hpo':'76810.0truetrue' }
+		values = { 'username-679': username,'user_password-679': 'password', 'form_id':679, 'request':'', 'LTCx-C-YkJ-d-S':'JYZUPu62ATnbfH5UZoTgnFHINiRnQTuypsuyZ2xLn06yud6LPzmbWADbt6T7NqgPJvmJgyjA8m6_to5mJ2gTz-T28VEe7AUKK7iex5-sGH6r2s8MldoYTY2Vx0VQZUdM', 'ZQS-dSU-hb-gYy-E-Hpo':'76810.0truetrue'}
 		data = urllib.urlencode(values)
 
 		# in this build opener we overwrite SSL configuration
