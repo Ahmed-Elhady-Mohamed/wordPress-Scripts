@@ -1,5 +1,6 @@
 #!/usr/bin/python
-import urllib,urllib2,ssl,sys
+import urllib,urllib2,ssl,sys,optparse
+
 
 
 # Support SSL Connections & Ignore SSL Certificate Validation
@@ -27,18 +28,24 @@ def extractUsername(content):
 
 ## This is the main function
 if __name__ == '__main__':
+
+	# Show HELP
+	p = optparse.OptionParser("usage: %prog [http|https]://www.domainName.com loginPage userfile", version="%prog 0.1")
+	p.add_option("-d", "--domainName", dest="domainName", type="string", help="specify domainName to run on")
+	p.add_option("-u", "--userfile", dest="usernameFile", type="string", help="file of usernames")
+	p.add_option("-l", "--loginPage", dest="loginPage", type="string", help="WordPress Login Page")
+	(options, args) = p.parse_args()
+	domainName = options.domainName
+	usernameFile = options.usernameFile
+	loginPage = options.loginPage
 	
 	# check the command line arguments and Show how to use the script
-	if len(sys.argv) != 4:
-		sys.exit("\n\n[usage]   " + sys.argv[0] + " <Target> <Path To Login Page> <Usernames Wordlist file>\n[Example] "  + sys.argv[0] + "  http://domain.com /login/ users.txt\n\n")
+	if len(sys.argv) != 7:
+		sys.exit("\n\nUse -h option for help \n\n")
 
-	# Get Command Line Arguments
-	target = sys.argv[1]
-	loginPage = sys.argv[2]
-	usernameFile = sys.argv[3]
 	
 	# Set the URI and useragent
-	site = target + '/' + loginPage
+	site = domainName + '/' + loginPage
 	hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'}
     
 	# Open the usernames wordlist file in a read mode
